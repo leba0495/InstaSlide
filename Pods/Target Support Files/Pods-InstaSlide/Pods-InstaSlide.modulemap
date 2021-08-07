@@ -1,0 +1,6 @@
+framework module Pods_InstaSlide {
+  umbrella header "Pods-InstaSlide-umbrella.h"
+
+  export *
+  module * { export * }
+}
