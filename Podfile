@@ -8,4 +8,5 @@ target 'InstaSlide' do
   # Pods for iSlide
   pod 'Parse'
   pod 'AlamofireImage'
+  pod 'MessageInputBar'
 end

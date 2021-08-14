@@ -8,9 +8,15 @@
 import UIKit
 import AlamofireImage
 import Parse
+import MessageInputBar
 
 class CameraViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    // **** MessageInputBar not implemented in this View yet ****
+//    var captionBar = MessageInputBar()
+//    var showCaptionBar = false
 
+    
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var captionTextField: UITextField! {
         didSet {
@@ -26,9 +32,29 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+//        captionBar.inputTextView.placeholder = "Add a comment..."
+//        captionBar.sendButton.title = "Post"
+//
+//        // Make keyboard dissmis from screen when it's not needed
+//        let center = NotificationCenter.default
+//        center.addObserver(self, selector: #selector(keyboardWillBeHidden(note:)), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
+    
+//    override var inputAccessoryView: UIView? {
+//        return captionBar
+//    }
+//    
+//    override var canBecomeFirstResponder: Bool {
+//        return showCaptionBar
+//    }
+//    
+//    @objc func keyboardWillBeHidden(note: Notification) {
+//        // This will toggle the keyboard after dismmiss, and clear the text in the keyboard
+//        captionBar.inputTextView.text = nil
+//        showCaptionBar = false
+//        becomeFirstResponder()
+//    }
     
     @IBAction func onSubmitButton(_ sender: Any) {
         let post = PFObject(className: "Posts")
@@ -71,7 +97,7 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
         
         //Resize the image becase of heroku upload speed
         let size = CGSize(width: 370, height: 375)
-        let scaledImage = image.af.imageScaled(to: size)
+        let scaledImage = image.af.imageAspectScaled(toFill: size)
         imageView.image = scaledImage
         
         //Dimiss camera view

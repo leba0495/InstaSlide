@@ -42,11 +42,12 @@ class LoginViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        if UserDefaults.standard.bool(forKey: "userLoggedIn") == true {
-            self.performSegue(withIdentifier: "loginSegue", sender: self)
-        }
-    }
+    // Previously used UserDefaults to implement logged in after app's restarts but UD is not use for authentication so it's not secure.
+//    override func viewDidAppear(_ animated: Bool) {
+//        if UserDefaults.standard.bool(forKey: "userLoggedIn") == true {
+//            self.performSegue(withIdentifier: "loginSegue", sender: self)
+//        }
+//    }
     
     @IBAction func onSignIn(_ sender: Any) {
         let userName = userNameField.text!
@@ -54,7 +55,7 @@ class LoginViewController: UIViewController {
         
         PFUser.logInWithUsername(inBackground: userName, password: password) { (pfUser, error) in
             if (pfUser != nil ){
-                UserDefaults.standard.setValue(true, forKey: "userLoggedIn")
+//                UserDefaults.standard.setValue(true, forKey: "userLoggedIn")
                 self.performSegue(withIdentifier: "loginSegue", sender: nil)
             } else {
                 print("Error: \(String(describing: error?.localizedDescription))")
@@ -90,6 +91,7 @@ class LoginViewController: UIViewController {
 }
 
 extension LoginViewController: UITextFieldDelegate {
+    // To move to the next field after pressing 'Return' key.
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if let nextTextField = view.viewWithTag(textField.tag + 1){
             textField.resignFirstResponder()
