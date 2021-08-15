@@ -50,5 +50,5 @@ The following **bonus** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-![InstaSlidePart1](https://user-images.githubusercontent.com/61469904/129431246-920ca717-8290-4fc6-bc02-45d2c0600015.gif)
+![ezgif com-gif-maker(4)](https://user-images.githubusercontent.com/61469904/129463603-f27e0da3-a961-4e67-90f7-af9bb8153a5e.gif)
 
