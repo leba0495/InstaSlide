@@ -1,3 +1,30 @@
+# Parstagram - Part II
+
+This is an Instagram clone with a custom Parse backend that allows a user to post photos, view a global photos feed, and add comments!
+
+Time spent: **6-7** hours spent in total
+
+## User Stories
+
+The following **required** functionality is completed:
+
+- [x] User stays logged in across restarts. (1pt)
+- [x] User can log out. (1pt)
+- [x] User can view comments on a post. (3pts)
+- [x] User can add a new comment. (5pts)
+
+The following **bonus** features are implemented:
+
+- [ ] User can add a profile picture. (2pts)
+- [ ] Profile pictures are shown for posts and comments. (2pts)
+
+## Video Walkthrough
+
+Here's a walkthrough of implemented user stories:
+
+![InstaSlidePart2](https://user-images.githubusercontent.com/61469904/129431454-680dcf36-c3a4-4741-afd4-423012dbe000.gif)
+
+
 # InstaSlide - Part I
 
 This is an Instagram clone with a custom Parse backend that allows a user to post photos and view a global photos feed.
@@ -16,11 +43,12 @@ The following **required** functionality is completed:
 
 The following **bonus** features are implemented:
 
-- [ ] User can pull to refresh. (1pt)
-- [ ] User can load past posts infinitely. (2pts)
+- [x] User can pull to refresh. (1pt)
+- [x] User can load past posts infinitely. (2pts)
 
 ## Video Walkthrough
 
 Here's a walkthrough of implemented user stories:
 
-![ezgif com-gif-maker(1)](https://user-images.githubusercontent.com/61469904/128584736-3810302b-e0ba-489c-8ab1-eb3035c8a22a.gif)
+![InstaSlidePart1](https://user-images.githubusercontent.com/61469904/129431246-920ca717-8290-4fc6-bc02-45d2c0600015.gif)
+
