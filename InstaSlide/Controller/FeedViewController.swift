@@ -50,7 +50,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     @objc func loadPosts() {
-        numberOfPosts = 20
+        numberOfPosts += 20
         let query = PFQuery(className: "Posts")
     
         // If you do not include the key then it'll just access the reference (the pointer without the object)
@@ -60,6 +60,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
             if posts != nil {
                 self.posts.removeAll()
                 self.posts = posts!
+                self.posts.reverse()
                 self.tableView.reloadData()
                 self.myResfreshControl.endRefreshing()
             } else {
@@ -72,7 +73,6 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     func loadMorePosts(){
         let query = PFQuery(className: "Posts")
         numberOfPosts += 5
-        
         query.includeKeys(["author", "comments", "comments.author"])
         query.limit = numberOfPosts
         
@@ -80,6 +80,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
             if posts != nil {
                 self.posts.removeAll()
                 self.posts = posts!
+                self.posts.reverse()
                 self.tableView.reloadData()
                 self.myResfreshControl.endRefreshing()
             } else {
